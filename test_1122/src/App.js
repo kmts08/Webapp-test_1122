@@ -19,12 +19,21 @@ function Home(){
   )
 }
 function Weather(){
+  const handleChange = () => {
+    const value = document.getElementById("area").value
+    console.log(value)
+    alert(value)
+  }
   return(
     <>
     <Header />
     <h1>Weather</h1>
-    <p>今日の天気は<span className='weather'>null</span>です。</p>
-    <p>最高気温は<span className='ht'>null</span>、最低気温は<span className='lt'>null</span>です。良い一日を！</p>
+    <p>今日の天気</p>
+    <select id="area" onChange={handleChange}>
+      <option value="tokyo">東京</option>
+      <option value="osaka">大阪</option>
+      <option value="sapporo">札幌</option>
+  </select>
     <Footer />
     </>
   )
